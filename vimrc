@@ -1,6 +1,6 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-
+set transparency=50
 let mapleader = ","
 nmap n :NERDTree
 
