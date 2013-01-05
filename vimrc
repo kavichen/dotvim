@@ -71,7 +71,7 @@ set foldlevel=100            " 禁止自动折叠
 set laststatus=2             " 开启状态栏信息
 set cmdheight=2              " 命令行的高度，默认为1，这里设为2
 "set showmatch               " 显示括号配对情况
-"set cursorline              " 突出显示当前行
+set cursorline              " 突出显示当前行
 "set nowrap                  " 设置不自动换行
 set writebackup              " 设置无备份文件
 set nobackup
@@ -110,7 +110,7 @@ set fileencodings=utf-8,gbk,cp936,latin-1
 
 :inoremap " ""<ESC>i
 
-:inoremap ' ''<ESC>i
+""':inoremap ' ''<ESC>i
 
 :inoremap ` ``<ESC>i
 
