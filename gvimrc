@@ -20,9 +20,9 @@ let Tlist_Compact_Format=1
 
 "set splitright
 if has("gui_macvim")
-  set transparency=14
+  set transparency=17
   set go=aAce
-  set guifont=Monaco:h13
+  set guifont=Monaco:h12
   set showtabline=2
   set columns=140
   set lines=100

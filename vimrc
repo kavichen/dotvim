@@ -18,6 +18,9 @@ autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 " set ctp files to php & html filetype
 au BufRead,BufNewFile *.ctp        set filetype=php.html
 
+"word complete
+autocmd BufEnter * call DoWordComplete() 
+
 let g:molokai_original =1
 let g:snips_author ='Kavi'
 
