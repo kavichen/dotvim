@@ -1,4 +1,4 @@
-set nu
+"set nu
 
 "自动打开nerdtree
 autocmd VimEnter * NERDTree
@@ -17,3 +17,14 @@ nmap <Leader>b :CommandTBuffer<CR>
 let Tlist_Show_One_File=1
 let Tlist_Use_Right_Window=1
 let Tlist_Compact_Format=1
+
+"set splitright
+if has("gui_macvim")
+  set transparency=14
+  set go=aAce
+  set guifont=Monaco:h13
+  set showtabline=2
+  set columns=140
+  set lines=100
+  set guioptions-=T
+endif

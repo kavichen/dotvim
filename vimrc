@@ -1,29 +1,13 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-set transparency=50
-let mapleader = ","
-nmap n :NERDTree
+let mapleader =","
+"nmap n :NERDTree
 
-syntax enable
-set ruler
-set showcmd
-
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set cindent
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""=> General
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType ruby set tabstop=2|set shiftwidth=2
 autocmd FileType php set tabstop=4|set shiftwidth=4
-
-set fileencodings=ucs-bom,utf-8,cp936,gbk,big5,euc-jp,euc-kr,latin1
-
-set ffs=unix
 
 "pathogen
 call pathogen#infect()
@@ -34,10 +18,10 @@ autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 " set ctp files to php & html filetype
 au BufRead,BufNewFile *.ctp        set filetype=php.html
 
-let g:molokai_original = 1
-let g:snips_author = 'Kavi'
+let g:molokai_original =1
+let g:snips_author ='Kavi'
 
-let mapleader = ','
+let mapleader =','
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
@@ -49,7 +33,6 @@ let g:syntastic_check_on_open=1
 nmap <Leader>stt :Errors <CR>
 
 colorscheme elflord          " 着色模式：黄色和粉红色为主
-set guifont=Monaco:h11       " 字体 && 字号
 set backspace=2              " 设置退格键可用
 set autoindent               " 自动对齐
 set ai!                      " 设置自动缩进
@@ -71,7 +54,7 @@ set foldlevel=100            " 禁止自动折叠
 set laststatus=2             " 开启状态栏信息
 set cmdheight=2              " 命令行的高度，默认为1，这里设为2
 "set showmatch               " 显示括号配对情况
-set cursorline              " 突出显示当前行
+"set cursorline              " 突出显示当前行
 "set nowrap                  " 设置不自动换行
 set writebackup              " 设置无备份文件
 set nobackup
@@ -79,6 +62,13 @@ set list                     " 显示Tab符，使用一高亮竖线代替
 set listchars=tab:\|\ ,
 set tabstop=2                " 设置Tab键的宽度        [等同的空格个数]
 set expandtab                " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
+set showcmd
+set ignorecase
+set autoread                 " 自动重新读入
+set autochdir                " 自动切换到当前文件夹
+set smartcase
+set ffs=unix
+
 
 syntax enable                " 打开语法高亮
 syntax on                    " 开启文件类型侦测
@@ -92,7 +82,7 @@ au BufRead,BufNewFile *.s,*.c,*.cpp,*.h,*.cl,*.rb,*.sql,*.sh,*.vim,*.js,*.css,*.
 " 设置编码
 set fenc=utf-8
 set encoding=utf-8
-set fileencodings=utf-8,gbk,cp936,latin-1
+set fileencodings=ucs-bom,utf-8,cp936,gbk,big5,euc-jp,euc-kr,latin1,cp936
 
 " ======= 引号 && 括号自动匹配 ======= "
 
@@ -116,9 +106,9 @@ set fileencodings=utf-8,gbk,cp936,latin-1
 
 function ClosePair(char)
   if getline('.')[col('.') - 1] == a:char
-     return "\<Right>"
+    return "\<Right>"
   else
-     return a:char
+    return a:char
   endif
 endf
 
@@ -160,8 +150,8 @@ let g:vimwiki_camel_case = 0
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,br,hr,div,del,code,red,center,left,right,h2,h4,h5,h6,pre,script,style'
 
 let g:vimwiki_list = [{
-\ 'path': '~/vimwiki/',
-\ 'path_html': '~/kavichen.github.com/wiki/',
-\ 'auto_export': 1,
-\ 'nested_syntaxes': {'Clang': 'c', 'C++': 'cpp', 'Lisp': 'lisp', 'Ruby': 'ruby', 'SQL': 'sql', 'Bash': 'sh', 'Vim': 'vim', 'Make': 'make', 'CMake': 'cmake', 'JS': 'javascript', 'CSS': 'css', 'HTML': 'html', 'XML': 'xml'},}]
+      \ 'path': '~/vimwiki/',
+      \ 'path_html': '~/kavichen.github.com/wiki/',
+      \ 'auto_export': 1,
+      \ 'nested_syntaxes': {'Clang': 'c', 'C++': 'cpp', 'Lisp': 'lisp', 'Ruby': 'ruby', 'SQL': 'sql', 'Bash': 'sh', 'Vim': 'vim', 'Make': 'make', 'CMake': 'cmake', 'JS': 'javascript', 'CSS': 'css', 'HTML': 'html', 'XML': 'xml'},}]
 
