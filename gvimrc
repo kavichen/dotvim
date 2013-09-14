@@ -1,4 +1,5 @@
 "set nu
+let mapleader = ","
 
 "自动打开nerdtree
 autocmd VimEnter * NERDTree
@@ -26,5 +27,8 @@ if has("gui_macvim")
   set showtabline=2
   set columns=140
   set lines=100
-  set guioptions-=T
+  set guioptions=T
 endif
+
+"VimwikiAll2HTML快捷键
+map <F5>:VimwikiAll2HTML<cr>

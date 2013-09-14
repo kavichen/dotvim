@@ -1,6 +1,6 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-let mapleader =","
+"let mapleader ="/"
 "nmap n :NERDTree
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -13,16 +13,19 @@ autocmd FileType php set tabstop=4|set shiftwidth=4
 call pathogen#infect()
 
 " PHP parser check (CTRL-L)
-autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
+" autocmd FileType php noremap <C-L> :!/usr/bin/php -l %<CR>
 
 " set ctp files to php & html filetype
 au BufRead,BufNewFile *.ctp        set filetype=php.html
+" 中文乱码
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 "word complete
-autocmd BufEnter * call DoWordComplete() 
+"autocmd BufEnter * call DoWordComplete() 
 
 let g:molokai_original =1
 let g:snips_author ='Kavi'
+let g:vim_arduino_map_keys =0
 
 let mapleader =','
 
@@ -34,6 +37,10 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open=1
 nmap <Leader>stt :Errors <CR>
+
+"VimwikiAll2HTML快捷键
+map <F5> :VimwikiAll2HTML<cr>
+map n :noh<cr>
 
 colorscheme elflord          " 着色模式：黄色和粉红色为主
 set backspace=2              " 设置退格键可用
@@ -78,6 +85,30 @@ syntax on                    " 开启文件类型侦测
 filetype indent on           " 针对不同的文件类型采用不同的缩进格式
 filetype plugin on           " 针对不同的文件类型加载对应的插件
 filetype plugin indent on    " 启用自动补全
+
+" 以下设置分屏切换的快捷键
+" ctrl + j/k/h/l 切换上下左右
+nnoremap <c-j> <c-w>j 
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" 以下设置tab快捷键
+noremap <D-M-Left> :tabprevious<cr>
+noremap <D-M-Right> :tabnext<cr>next<cr>
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+map <D-0> :tablast<CR>
+
+"在insert mode下，用jj快捷键<esc>
+imap jj <ESC> 
 
 " 每行超过80个的字符用下划线标示
 au BufRead,BufNewFile *.s,*.c,*.cpp,*.h,*.cl,*.rb,*.sql,*.sh,*.vim,*.js,*.css,*.html 2match Underlined /.\%81v/
@@ -158,3 +189,4 @@ let g:vimwiki_list = [{
       \ 'auto_export': 1,
       \ 'nested_syntaxes': {'Clang': 'c', 'C++': 'cpp', 'Lisp': 'lisp', 'Ruby': 'ruby', 'SQL': 'sql', 'Bash': 'sh', 'Vim': 'vim', 'Make': 'make', 'CMake': 'cmake', 'JS': 'javascript', 'CSS': 'css', 'HTML': 'html', 'XML': 'xml'},}]
 
+" 以下设置tab切换的快捷键

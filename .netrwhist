@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/kavi/.vimperator/info'
+let g:netrw_dirhist_2='/Users/kavi/百度云同步盘/Developer/wx/.git'
+let g:netrw_dirhist_3='/Users/kavi/Developer/Mk_BLCtrl/Reference_Material'
