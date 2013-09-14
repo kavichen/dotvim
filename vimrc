@@ -1,5 +1,22 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
+set nocompatible
+filetype off
+
+""""""""""""""""""Configure bundles""""""""""""""""""
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+filetype plugin indent on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+"""""""""""""""""""clang_complete"""""""""""""""""""
+let g:clang_user_options='|| exit 0'
+let g:clang_close_preview=1
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 "let mapleader ="/"
 "nmap n :NERDTree
 
